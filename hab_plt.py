@@ -16,7 +16,7 @@ data = np.genfromtxt(StringIO(fp.read()), dtype=None, delimiter=',', names=True)
 #  Now we can get our x and y data from that data array.
 
 
-#  This line of code converts the string into integers for matplotlib to plot on the graph
+'''#  This line of code converts the string into integers for matplotlib to plot on the graph
 x = [datetime.datetime.strptime(elem, '%H:%M:%S') for elem in x]
 
 #  Plot the data you want to see
@@ -35,4 +35,4 @@ ax1.set_xlabel('Time')
 plt.setp(ax1.get_xticklabels(), rotation=45, horizontalalignment='right')
 
 
-plt.show()
+plt.show()'''

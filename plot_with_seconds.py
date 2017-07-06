@@ -9,11 +9,12 @@ from StringIO import StringIO
 
 
 # Set the hour and minutes we want to start plotting data from
-t = '10:45:'
+
 
 #-------------------------------------------------------------
 #   Add from last example
-def addSeconds(t):
+def addSeconds():
+    t = '10:45:'
     s1 = ['0','1','2','3','4','5']
     s2 = ['0','1','2','3','4','5','6','7','8','9']
     launch = []
@@ -25,7 +26,7 @@ def addSeconds(t):
         
     return launch 
 
-launch = addSeconds(t)
+launch = addSeconds()
 
 #--------------------------------------------------------------
 
