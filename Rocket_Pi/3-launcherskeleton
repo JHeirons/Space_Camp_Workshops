@@ -1,0 +1,48 @@
+import RPi.GPIO as GPIO
+import time
+
+GPIO.setmode(GPIO.BCM)
+
+launch_button = 
+arm_switch = 
+
+GPIO.setup()
+GPIO.setup()
+
+led1 = 
+led2 = 
+led3 = 
+
+GPIO.setup()
+GPIO.setup()
+GPIO.setup()
+
+launch = 
+
+GPIO.setup()
+
+arm_prev_input = 0
+launch_prev_input = 0
+
+armed = False
+while True:
+    *set outputs low*
+    
+    input = ()
+    if ():
+        armed = True
+        print (‘Circuit Armed’)
+        if ():
+            *set LEDs high*
+            input = ()
+            if ():
+                *set LEDs low*
+                print (‘Countdown to launch’)
+                *turn each led on after a second*
+                *set launch pin high*
+                print (‘Ignition’)
+            launch_prev_input = input
+            time.sleep(0.05)
+              
+    arm_prev_input = input
+    time.sleep(0.05)
