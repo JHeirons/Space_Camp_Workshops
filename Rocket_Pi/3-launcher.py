@@ -1,5 +1,5 @@
 import RPi.GPIO as GPIO
-import time
+from time import sleep
 
 GPIO.setmode(GPIO.BCM)
 
@@ -17,9 +17,9 @@ GPIO.setup(led1, GPIO.OUT)
 GPIO.setup(led2, GPIO.OUT)
 GPIO.setup(led3, GPIO.OUT)
 
-launch = 4
+ignition = 4
 
-GPIO.setup(launch, GPIO.OUT)
+GPIO.setup(ignition, GPIO.OUT)
 
 
 
@@ -32,7 +32,7 @@ while True:
     GPIO.output(led1, GPIO.LOW)
     GPIO.output(led2, GPIO.LOW)
     GPIO.output(led3, GPIO.LOW)
-    GPIO.output(launch, GPIO.LOW)
+    GPIO.output(ignition, GPIO.LOW)
     
     input = (GPIO.input(arm_switch))
     if ((not arm_prev_input) and input):
@@ -41,24 +41,27 @@ while True:
             GPIO.output(led1, GPIO.HIGH)
             GPIO.output(led2, GPIO.HIGH)
             GPIO.output(led3, GPIO.HIGH)
-            print (armed)
+            print ("Circuit armed")
             input = (GPIO.input(launch_button))
             if ((not launch_prev_input) and input):
                 GPIO.output(led1, GPIO.LOW)
                 GPIO.output(led2, GPIO.LOW)
                 GPIO.output(led3, GPIO.LOW)
-                time.sleep(0.5)
+                sleep(0.5)
                 GPIO.output(led1, GPIO.HIGH)
-                time.sleep(1)
+                print("3")
+                sleep(1)
                 GPIO.output(led2, GPIO.HIGH)
-                time.sleep(1)
+                print("2")
+                sleep(1)
                 GPIO.output(led3, GPIO.HIGH)
-                time.sleep(1)
-                GPIO.output(launch, GPIO.HIGH)
-                time.sleep(10)
-                print('launch')
+                print("1")
+                sleep(1)
+                GPIO.output(ignition, GPIO.HIGH)
+                print('ignition')
+                sleep(10)
             launch_prev_input = input
-            time.sleep(0.05)
+            sleep(0.05)
               
     arm_prev_input = input
-    time.sleep(0.05)
+    sleep(0.05)
